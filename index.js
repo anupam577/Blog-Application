@@ -12,7 +12,35 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+
+
+
+// Cors 
+const corsOptions = {
+  origin:process.env.ALLOWED_CLIENTS.split(',')
+  // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
+}
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE'
+  ],
+
+  
+  allowedHeaders: [
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  ],
+ 
+};
+
+// app.use(cors());
+app.use(cors(corsOpts));
+app.use(cors(corsOptions))
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', Router);
