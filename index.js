@@ -36,6 +36,7 @@ const corsOpts = {
  
 };
 dotenv.config();
+Connection();
 // app.use(cors());
 app.use(cors(corsOpts));
 app.use(cors(corsOptions))
@@ -50,6 +51,6 @@ app.get("/fon",(req,resp)=>{
     resp.send("Hello")
 
 })
-Connection();
+
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
