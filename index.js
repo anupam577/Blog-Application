@@ -8,7 +8,7 @@ import Connection from './database/db.js';
 import Router from './routes/route.js';
 
 
-dotenv.config();
+
 
 const app = express();
 
@@ -35,7 +35,7 @@ const corsOpts = {
   ],
  
 };
-
+dotenv.config();
 // app.use(cors());
 app.use(cors(corsOpts));
 app.use(cors(corsOptions))
