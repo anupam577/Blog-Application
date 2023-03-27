@@ -37,7 +37,7 @@ const corsOpts = {
 };
 dotenv.config();
 Connection();
-// app.use(cors());
+app.use(cors());
 app.use(cors(corsOpts));
 app.use(cors(corsOptions))
 app.use(bodyParser.json({ extended: true }));
