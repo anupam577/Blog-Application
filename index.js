@@ -13,8 +13,6 @@ dotenv.config();
 const app = express();
 
 
-
-
 // Cors 
 const corsOptions = {
   origin:process.env.ALLOWED_CLIENTS.split(',')
@@ -48,7 +46,10 @@ app.use('/', Router);
 
 const PORT = 8000;
 
+app.get("/fon",(req,resp)=>{
+    resp.send("Hello")
 
+})
 Connection();
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
