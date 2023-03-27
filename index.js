@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import Connection from './database/db.js';
 import Router from './routes/route.js';
 
-
+dotenv.config();
 
 
 const app = express();
@@ -35,7 +35,7 @@ const corsOpts = {
   ],
  
 };
-dotenv.config();
+
 Connection();
 app.use(cors());
 app.use(cors(corsOpts));
